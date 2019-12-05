@@ -1,0 +1,21 @@
+image:
+  alpine:latest
+
+deploy:
+  tags:
+    - it
+  before_script:
+    - apk add --no-cache openssh
+    - mkdir ~/.ssh
+    - echo "${UTIL_SSH_KEY_PEM}" > ~/.ssh/util.pem
+    - chmod 400 ~/.ssh/util.pem
+
+  script:
+    - |
+        ssh -o StrictHostKeychecking=no -i ~/.ssh/util.pem "ec2-user@${UTIL_SERVER_IP}" /bin/bash << EOF
+          source ~/.bash_profile \
+          && sudo git -C "${IT_BOT_DIR}" pull \
+          && sudo /usr/local/bin/docker-compose -f "${IT_BOT_DIR}/docker-compose.yml" down \
+          && sudo /usr/local/bin/docker-compose -f "${IT_BOT_DIR}/docker-compose.yml" up --build -d
+  only:
+    - master

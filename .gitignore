@@ -1,0 +1,9 @@
+.vscode/
+__pycache__/
+/data/
+.idea/
+errbot.log
+test.py
+/IT_BOT/
+pyvenv.cfg
+.DS_Store

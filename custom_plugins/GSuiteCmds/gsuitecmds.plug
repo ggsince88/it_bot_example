@@ -1,0 +1,9 @@
+[Core]
+Name = GSuiteCmds
+Module = gsuitecmds
+
+[Python]
+Version = 3
+
+[Documentation]
+Description = Plugin to run GSuite admin commands

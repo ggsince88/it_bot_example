@@ -1,0 +1,21 @@
+version: "3.2"
+
+volumes:
+  errbot_vol:
+
+services:
+  errbot:
+    build: .
+    ports:
+      - "3142:3142"
+    volumes:
+      - errbot_vol:/srv
+    environment:
+      - WAIT=3
+      - BACKEND=Slack
+      - BOT_TOKEN=xoxb-XXXXXXXXXX
+      - BOT_ADMINS=@admin
+      - BOT_ALT_PREFIXES=@it-bot
+      - BOT_EXTRA_PLUGIN_DIR=/etc/errbot/custom_plugins
+      - AUTOINSTALL_DEPS=true
+      - HIDE_RESTRICTED_COMMANDS=true
