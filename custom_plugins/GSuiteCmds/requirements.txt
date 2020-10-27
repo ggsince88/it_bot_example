@@ -12,7 +12,7 @@ cffi==1.12.3
 chardet==3.0.4
 Click==7.0
 colorlog==4.0.2
-cryptography==2.7
+cryptography==3.2
 daemonize==2.5.0
 dataclasses==0.6
 dnspython==1.15.0
