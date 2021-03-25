@@ -41,7 +41,7 @@ Pygments==2.4.2
 pygments-markdown-lexer==0.1.0.dev39
 pylint==2.3.1
 pyOpenSSL==19.0.0
-PyYAML==5.1.1
+PyYAML==5.4
 requests==2.22.0
 rocket-errbot==1.2.5
 rsa==4.0
